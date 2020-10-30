@@ -12,3 +12,11 @@ calculate2=$((c + (a / b)))
 echo $calculate2
 calculate3=$(((a % b) + c))
 echo $calculate3
+declare -A calculatedvalue
+calculatedvalue["key1"]=$calculate
+calculatedvalue["key2"]=$calculate1
+calculatedvalue["key3"]=$calculate2
+calculatedvalue["key4"]=$calculate3
+echo ${!calculatedvalue[@]}
+echo ${calculatedvalue[@]}
+echo ${#calculatedvalue[@]}
