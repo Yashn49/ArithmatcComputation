@@ -20,3 +20,5 @@ calculatedvalue["key4"]=$calculate3
 echo ${!calculatedvalue[@]}
 echo ${calculatedvalue[@]}
 echo ${#calculatedvalue[@]}
+array1=($calculate $calculate1 $calculate2 $calculate3)
+echo ${array1[@]}
