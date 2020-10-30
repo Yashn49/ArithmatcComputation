@@ -34,3 +34,16 @@ do
  done
 done
 echo "The array in descending sorted order is :" ${array[@]}
+
+for (( i=0; i<4; i++ ))
+do
+ for ((j=0; j<$((4-($i-1))); j++))
+  if [ ${array1[j]} -gt ${array1[$(($j+1))]} ]
+  then
+   temp=${array1[j]}
+   array1[$j]=${array1[$(($j+1))]}
+   array1[$(($j+1))]=$temp
+  fi
+ done
+done
+echo "The array in ascending sorted order is :" ${array[@]}
