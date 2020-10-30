@@ -8,3 +8,5 @@ calculate=$((a + (b * c)))
 echo $calculate
 calculate1=$(((a * b) + c))
 echo $calculate1
+calculate2=$((c + (a / b)))
+echo $calculate2
