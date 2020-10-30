@@ -22,3 +22,15 @@ echo ${calculatedvalue[@]}
 echo ${#calculatedvalue[@]}
 array1=($calculate $calculate1 $calculate2 $calculate3)
 echo ${array1[@]}
+for (( i=0; i<4; i++ ))
+do
+ for ((j=0; j<$((4-($i-1))); j++))
+  if [ ${array1[j]} -lt ${array1[$(($j+1))]} ]
+  then
+   temp=${array1[j]}
+   array1[$j]=${array1[$(($j+1))]}
+   array1[$(($j+1))]=$temp
+  fi
+ done
+done
+echo "The array in descending sorted order is :" ${array[@]}
